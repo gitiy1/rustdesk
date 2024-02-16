@@ -1,4 +1,4 @@
-name: Build Web Docker
+name: Build Web Client
 on:
   workflow_dispatch:
 jobs:
@@ -11,13 +11,7 @@ jobs:
         with:
           channel: 'stable'
 
-      - run: cd flutter/web/js
-      - run: npm install ts-proto
-      - run: npm install vite@2.8
-      - run: npm install yarn -g
-      - run: npm install typescript -g
-      - run: npm install protoc -g
-      - run: yarn build
+      - run: cd flutter/web/js && npm install ts-proto && npm install vite@2.8 && npm install yarn -g && npm install typescript -g && npm install protoc -g && yarn build
 
       - name: Building Docker Image
         uses: elgohr/Publish-Docker-Github-Action@v5
