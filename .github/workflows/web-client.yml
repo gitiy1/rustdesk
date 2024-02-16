@@ -18,9 +18,8 @@ jobs:
           sudo git clone https://github.com/flutter/flutter.git /usr/local/flutter
     
       - name: Build
-        env:
-          PATH: "/usr/local/flutter/bin:/usr/local/flutter/bin/cache/dart-sdk/bin:$PATH"
         run: |
+          export PATH=/usr/local/flutter/bin:/usr/local/flutter/bin/cache/dart-sdk/bin:$PATH
           cd flutter && flutter doctor
           flutter channel master
           flutter config --enable-web
