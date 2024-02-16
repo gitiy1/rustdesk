@@ -1,4 +1,4 @@
-name: Build Web Client
+  name: Build Web Client
   on:
     workflow_dispatch:
   jobs:
